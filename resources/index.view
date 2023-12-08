@@ -1,0 +1,10 @@
+<svg viewport-fill="fb-cyan">
+  <text id="clock-label"
+      fill="black" font-size="32" font-family="System-Regular"
+      text-anchor="middle" text-length="20">00:00:00</text>
+  <text id="dateBox"/>
+  <text id="dateBoxShadow" opacity="0.3"/>
+  <text id="wordBox"/>
+  <text id="wordBoxShadow" opacity="0.3"/>
+  <text id="heartRate"  fill="black">--</text>
+</svg>
