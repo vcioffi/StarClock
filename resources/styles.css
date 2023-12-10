@@ -11,21 +11,25 @@ text {
 }
 
 
-#clock-label {
+#clock {
   x: 50%;
-  y: 50%+15;
+  y: 40%+15;
+  fill: white;
 }
 
 #dateBox {
-  font-size: 22;
-  y: 10%;
+  font-size: 60;
+  x: 50%;
+  y: 40%+35;
+  fill: white;
 }
 
-#dateBoxShadow {
-  font-size: 22;
-  x: 50%+2;
-  y: 10%+2;
+#dayBox {
+  x: 50%;
+  y: 40%-35;
+  fill: white;
 }
+
 
 #timeBox {
   font-size: 120;
@@ -53,4 +57,5 @@ text {
   font-size: 30;
   x: 50%;
   y: 80%;
+  fill: white;
 }
