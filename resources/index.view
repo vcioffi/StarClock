@@ -1,4 +1,5 @@
-<svg viewport-fill="fb-cyan">
+<svg viewport-fill="fb-black">
+  <image href="starfieldbg.png" />
   <use href="#fitfont" id="dayBox" >
     <use href="#fitfont-char"/><use href="#fitfont-char"/><use href="#fitfont-char"/><use href="#fitfont-char"/><use href="#fitfont-char"/><use href="#fitfont-char"/>
     <use href="#fitfont-char"/><use href="#fitfont-char"/><use href="#fitfont-char"/><use href="#fitfont-char"/><use href="#fitfont-char"/><use href="#fitfont-char"/>
