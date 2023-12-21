@@ -6,6 +6,12 @@ import {FitFont} from "../fitfont";
 
 clock.granularity = "seconds"; // seconds, minutes, hours
 
+function zeroPad(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
 
 const clockLabel = new FitFont({ 
     id: document.getElementById("clock"),
@@ -31,7 +37,10 @@ export function init() {
 
     clock.addEventListener("tick", (evt) => {
     let today = evt.date;
-    clockLabel.text = evt.date.toTimeString().slice(0, -4);
+    let hours = zeroPad(today.getHours());
+    let min = zeroPad(today.getMinutes());
+    let sec = zeroPad(today.getSeconds());
+    clockLabel.text = `${hours}:${min}:${sec}`;//evt.date.toTimeString().slice(0, -4);
 
     if(previousDay !== today.getDay()){
         updateDate(evt);
