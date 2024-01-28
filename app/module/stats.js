@@ -1,11 +1,7 @@
 import document from "document";
 import { battery } from "power";
 
-const b1 = document.getElementById("b1");
-const b2 = document.getElementById("b2");
-const b3 = document.getElementById("b3");
-const b4 = document.getElementById("b4");
-const b5 = document.getElementById("b5");
+const batlevindicator = document.getElementById("batlevindicator");
 
 export function update() {
   batteryShow();
@@ -39,52 +35,11 @@ function batteryShow() {
     rmd = 0;
   }
   
-  if(charge <= 5) { /* Charge under 20 */
-    b1.style.fill = "#e63e3e";
-    b2.style.fill = "#909090";
-    b3.style.fill = "#909090";
-    b4.style.fill = "#909090";
-    b5.style.fill = "#909090";
-    
-  }
-  else if(charge <= 20) {
-    b1.style.fill = "#f6f6f6";
-    b2.style.fill = "#909090";
-    b3.style.fill = "#909090";
-    b4.style.fill = "#909090";
-    b5.style.fill = "#909090";
-  }
-  else if(charge <= 40) {
-    b1.style.fill = "#f6f6f6";
-    b2.style.fill = "#f6f6f6";
-    b3.style.fill = "#909090";
-    b4.style.fill = "#909090";
-    b5.style.fill = "#909090";
+  batlevindicator.width = Math.round(charge*0.35)
 
-  }
-  else if(charge <= 60) {
-    b1.style.fill = "#f6f6f6";
-    b2.style.fill = "#f6f6f6";
-    b3.style.fill = "#f6f6f6";
-    b4.style.fill = "#909090";
-    b5.style.fill = "#909090";
-    
-  }
-  else if(charge <= 80) {
-    b1.style.fill = "#f6f6f6";
-    b2.style.fill = "#f6f6f6";
-    b3.style.fill = "#f6f6f6";
-    b4.style.fill = "#f6f6f6";
-    b5.style.fill = "#909090";
-
-  }
-  else { /* Charge between 80 and 100 */
-  b1.style.fill = "#f6f6f6";
-  b2.style.fill = "#f6f6f6";
-  b3.style.fill = "#f6f6f6";
-  b4.style.fill = "#f6f6f6";
-  b5.style.fill = "#f6f6f6";
-
+  batlevindicator.style.fill = "white"
+  if(charge <= 15) { /* Charge under 20 */
+    batlevindicator.style.fill = "#e63e3e"
   }
   
   return;

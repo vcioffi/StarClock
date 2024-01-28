@@ -218,11 +218,8 @@
     <!-- Battery -->
 
     <g transform="translate(150, 75)">
-      <rect id="b1" class="battery" x="1" y="1"/>
-      <rect id="b2" class="battery" x="8" y="1"/>
-      <rect id="b3" class="battery" x="15" y="1"/>
-      <rect id="b4" class="battery" x="22" y="1"/>
-      <rect id="b5" class="battery" x="29" y="1"/>
+      <rect x="1" y="1" width="37" height="12" class="battery" id="batlevBorder" fill="#909090"/>
+      <rect x="2" y="2" width="36" height="10" class="battery" id="batlevindicator"  fill="white" />
     </g>
 
   <!-- North -->
