@@ -215,8 +215,17 @@
     <use href="#maindial" />
   </g>
 
+    <!-- Battery -->
+
+    <g transform="translate(150, 75)">
+      <rect id="b1" class="battery" x="1" y="1"/>
+      <rect id="b2" class="battery" x="8" y="1"/>
+      <rect id="b3" class="battery" x="15" y="1"/>
+      <rect id="b4" class="battery" x="22" y="1"/>
+      <rect id="b5" class="battery" x="29" y="1"/>
+    </g>
+
   <!-- North -->
-  <!-- <arc id="arc-n" x="0" y="0" width="100%" height="100%" fill="fb-red" arc-width="20" start-angle="-2" sweep-angle="4" /> -->
   <g id="arc-north" pointer-events="visible" transform="translate(50%,50%)">
     <rect x="$-6" y="-182" width="12" height="20" fill="fb-red" />
   </g>

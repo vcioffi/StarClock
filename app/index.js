@@ -9,4 +9,4 @@ clock.init();
 sensors.init();
 
 compass.init()
-// stats.update();
+stats.update();

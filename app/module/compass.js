@@ -2,7 +2,6 @@ import document from "document";
 import { geolocation } from "geolocation";
 
 const arc_north = document.getElementById("arc-north");
-const heading = document.getElementById("heading");
 
 export function init() {
   console.log("Position");
@@ -10,9 +9,9 @@ export function init() {
 }
 
 function locationSuccess(position) {
-    console.log("---------------------------------------------Position obj: " + position.coords.heading)
+    //console.log("---------------------------------------------Position obj: " + position.coords.heading)
     arc_north.groupTransform.rotate.angle  = position.coords.heading
-    heading.text = position.coords.heading;
+    //arc_north.groupTransform.rotate.angle  = position.coords.speed
 }
 
 function locationError(error) {
