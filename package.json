@@ -1,6 +1,6 @@
 {
-  "name": "my-first-clock",
-  "version": "0.1.0",
+  "name": "star-clock",
+  "version": "0.1.1",
   "private": true,
   "license": "UNLICENSED",
   "devDependencies": {
@@ -10,15 +10,16 @@
   "fitbit": {
     "appUUID": "471c17a3-94e1-4eb0-8da1-d1fc351183c8",
     "appType": "clockface",
-    "appDisplayName": "My First Clock",
+    "appDisplayName": "Star Clock",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
     "requestedPermissions": [
+      "access_location",
       "access_heart_rate",
       "access_activity",
       "access_user_profile",
       "access_exercise",
-      "access_location"
+      "run_background" 
     ],
     "buildTargets": [
       "atlas",

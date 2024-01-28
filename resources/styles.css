@@ -55,7 +55,39 @@ text {
 
 #heartRate {
   font-size: 30;
+  x: 46%;
+  y: 60%;
+  fill: white;
+}
+#iconheartRate {
+  width: 24;
+  height: 24;
+  x: 55%;
+  y: 53%;
+  fill: white;
+}
+
+#heading {
+  font-size: 30;
   x: 50%;
-  y: 80%;
+  y: 95%;
+  fill: white;
+}
+
+
+/* Clock grid  */
+.maindialfive {
+  x: 0%-1;
+  y: -48%;
+  width: 3;
+  height: 10;
+  fill: white;
+}
+
+.maindialminute {
+  x: 0%;
+  y: -48%;
+  width: 2;
+  height: 5;
   fill: white;
 }
