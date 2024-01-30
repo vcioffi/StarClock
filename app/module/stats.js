@@ -1,28 +1,23 @@
 import document from "document";
 import { battery } from "power";
+import { goals } from "user-activity";
+import { today } from "user-activity"; //steps, elevation, goals, ...
 
 const batlevindicator = document.getElementById("batlevindicator");
+const acr2 = document.getElementById("arc2");
+const test = document.getElementById("test");
 
 export function update() {
   batteryShow();
-  
-  //levelShow();
+//   levelShow();
 }
 
-// function levelShow() {
-//   let goalProgress;
-  
-//   if(primaryGoal === "activeZoneMinutes") {
-//     goalProgress = today.adjusted["activeZoneMinutes"].total / goals["activeZoneMinutes"].total;
-//   } else {
-//     goalProgress = today.adjusted[primaryGoal] / goals[primaryGoal];
-//   }
-  
-//   if(goalProgress > 1)
-//     goalProgress = 1;
-  
-//   lvl.width = goalProgress*154;
-// }
+function levelShow() {
+  //let goalprogress = today.adjusted["steps"].total / goals["steps"].total;
+  console.log("Goals: " + JSON.stringify(goals));
+  test.text =  today.adjusted.steps;
+  //acr2.sweepAngle = Math.round(pcnt*2.7);
+}
 
 function batteryShow() {
   let charge = battery.chargeLevel;

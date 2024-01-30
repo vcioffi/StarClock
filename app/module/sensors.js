@@ -11,6 +11,7 @@ const hrm = new HeartRateSensor({ frequency: 1 });
 
 const heartRate = document.getElementById("heartRate")
 let iconHRM = document.getElementById("iconHRM")
+const acr2 = document.getElementById("arc2");
 
 
 export function init() {
@@ -21,10 +22,8 @@ function initHrm() {
   
   hrm.addEventListener("reading", () => {
     heartRate.text = hrm.heartRate ? hrm.heartRate : "--";
-    // if (data.zone === "out-of-range") {
-    //   imgHRM.href = "resources\\icon\\heart_open.png"
-    // } else {
-    //   imgHRM.href = "iresources\icon\\heart_open.png"
+    // if(){
+    //   acr2.sweepAngle = Math.round(pcnt*2.7);
     // }
   });
   sensors.push(hrm);
@@ -33,12 +32,12 @@ function initHrm() {
 }
 
 export function wake() {
-  on();
+ // on();
   stats.update();
 }
 
 export function sleep() {
-  off();
+ // off();
 }
 
 /*--- Battery ---*/
