@@ -19,10 +19,10 @@ export function init() {
 }
 
 function locationSuccess(position) {
-    //console.log("---------------------------------------------Position obj: " + position.coords.heading)
+    // console.log("---------------------------------------------Position obj: " + JSON.stringify(position.coords));
     arc_north.groupTransform.rotate.angle  = position.coords.heading;
-    txtSpeed.text = position.coords.speed * 3.6
-    txtAlt.text = position.coords.altitudeAccuracy
+    txtSpeed.text = (position.coords.speed * 3.6).toFixed(1)
+    txtAlt.text = position.coords.altitudeAccuracy  ? position.coords.altitudeAccuracy : '0';
 }
 
 function locationError(error) {

@@ -22,9 +22,6 @@ function initHrm() {
   
   hrm.addEventListener("reading", () => {
     heartRate.text = hrm.heartRate ? hrm.heartRate : "--";
-    // if(){
-    //   acr2.sweepAngle = Math.round(pcnt*2.7);
-    // }
   });
   sensors.push(hrm);
 
