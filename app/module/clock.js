@@ -31,10 +31,23 @@ const dayBox = new FitFont({
     halign: 'middle',
     valign: 'middle ' })
 
+const kmBox = new FitFont({ 
+  id: document.getElementById("txtkm"),
+  font:'Monofonto_16',
+  halign: 'middle',
+  valign: 'middle ' })
+
+const mtBox = new FitFont({ 
+  id: document.getElementById("txtmt"),
+  font:'Monofonto_16',
+  halign: 'middle',
+  valign: 'middle ' })
+
 let previousDay = 8;
 
 export function init() {
-
+    kmBox.text = "KMH"
+    mtBox.text = "M"
     clock.addEventListener("tick", (evt) => {
     let today = evt.date;
     let hours = zeroPad(today.getHours());

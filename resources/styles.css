@@ -55,7 +55,78 @@ text {
 
 #heartRate {
   font-size: 30;
-  x: 50%;
+  x: 46%;
+  y: 60%;
+  fill: white;
+}
+
+#txtSpeed {
+  font-size: 30;
+  x: 46%;
+  y: 70%;
+  fill: white;
+}
+
+#txtkm {
+  font-size: 15;
+  x: 58%;
+  y: 70%;
+  fill: white;
+}
+
+#txtAlt {
+  font-size: 30;
+  x: 46%;
   y: 80%;
   fill: white;
+}
+
+#txtmt {
+  font-size: 15;
+  x: 60%;
+  y: 80%;
+  fill: white;
+}
+
+#iconheartRate {
+  width: 24;
+  height: 24;
+  x: 55%;
+  y: 53%;
+  fill: white;
+}
+
+#heading {
+  font-size: 30;
+  x: 50%;
+  y: 95%;
+  fill: white;
+}
+
+
+/* Clock grid  */
+.maindialfive {
+  x: 0%-1;
+  y: -48%;
+  width: 3;
+  height: 10;
+}
+
+.maindialminute {
+  x: 0%;
+  y: -48%;
+  width: 2;
+  height: 5;
+  
+}
+
+.battery {
+  width: 6; height: 14;
+}
+
+#clickbg {
+  width: 100%;
+  height: 100%;
+  fill: black;
+  opacity: 0
 }
