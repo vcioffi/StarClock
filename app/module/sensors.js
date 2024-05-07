@@ -22,19 +22,18 @@ function initHrm() {
   
   hrm.addEventListener("reading", () => {
     heartRate.text = hrm.heartRate ? hrm.heartRate : "--";
+    acr2.sweepAngle = hrm.heartRate ? converRatetoArch(hrm.heartRate) : "0";
   });
   sensors.push(hrm);
-
-  hrm.start();
 }
 
 export function wake() {
- // on();
   stats.update();
+  hrm.start()
 }
 
 export function sleep() {
- // off();
+  hrm.stop()
 }
 
 /*--- Battery ---*/
@@ -50,3 +49,16 @@ display.addEventListener("change", () => {
     sleep();
   }
 });
+
+//Heart max 190 min 60 
+//1.38 is the ratio obtained from (min arch - max arch)/(maxValue - min Value)
+function converRatetoArch(heartRate){
+  console.log("heartRate: " + heartRate)
+  let finalRate = (1.38 * (heartRate - 60)) - 180
+  console.log("finalRate: " + finalRate)
+  var adbFinRate = Math.abs(finalRate)
+  console.log(" Abs finalRate: " + adbFinRate)
+  var roundedFinRate =  Math.round(adbFinRate)
+  console.log(" rounded finalRate: " + roundedFinRate)
+  return roundedFinRate
+}

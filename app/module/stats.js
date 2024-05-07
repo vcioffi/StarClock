@@ -21,7 +21,6 @@ function levelShow() {
 
 function batteryShow() {
   let charge = battery.chargeLevel;
-  console.log("battery: " + battery.chargeLevel)
   let mod = (charge % 20)*0.8;
   let rmd = 14 - mod;
   
