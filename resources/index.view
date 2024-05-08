@@ -4,7 +4,7 @@
   <defs>
     <symbol id="arcs">
       <arc id="arcBg" fill="white" arc-width="25" start-angle="90" sweep-angle="180" class="statItem" type="arcBG" />
-      <arc id="arcFg" fill="#909090"  arc-width="25" start-angle="90" sweep-angle="180" class="statItem"  />
+      <arc id="arcFg" fill="#909090"  arc-width="25" start-angle="90" sweep-angle="180" class="statItem"/>
     </symbol>
   </defs>
 
@@ -250,11 +250,13 @@
   <!-- Arch Steps -->
   <g transform="translate(12%,12%)">
       <use href="#arcs" id="distance">
+        <!-- Arch background -->
         <set href="arcBg" attributeName="x" to="-10" />
         <set href="arcBg" attributeName="y" to="-5" />
         <set href="arcBg" attributeName="width" to="280" />
         <set href="arcBg" attributeName="height" to="280" />
         <set href="arcBg" attributeName="id" to="arc1" />
+        <!-- Arch  -->
         <set href="arcFg" attributeName="x" to="-10" />
         <set href="arcFg" attributeName="y" to="-5" />
         <set href="arcFg" attributeName="width" to="280" />
@@ -263,4 +265,5 @@
       </use>
   </g>
     <rect id="clickbg" pointer-events="visible"/>
+
 </svg>

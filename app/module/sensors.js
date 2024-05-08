@@ -22,19 +22,18 @@ function initHrm() {
   
   hrm.addEventListener("reading", () => {
     heartRate.text = hrm.heartRate ? hrm.heartRate : "--";
+    acr2.sweepAngle = hrm.heartRate ? converRatetoArch(hrm.heartRate) : "0";
   });
   sensors.push(hrm);
-
-  hrm.start();
 }
 
 export function wake() {
- // on();
   stats.update();
+  hrm.start()
 }
 
 export function sleep() {
- // off();
+  hrm.stop()
 }
 
 /*--- Battery ---*/
@@ -50,3 +49,24 @@ display.addEventListener("change", () => {
     sleep();
   }
 });
+
+//Heart max 190 min 60 
+//3.39 is the ratio obtained from (min arch - max arch)/(maxValue - min Value)
+function converRatetoArch(heartRate){
+  if(heartRate < 60){
+    heartRate = 60
+  }
+  var roundedFinRate = 0
+  let finalRate = (3.39 * (heartRate - 60)) - 180
+
+  if(finalRate > 0){
+    acr2.style.fill = "fb-red"
+    roundedFinRate =  Math.round(finalRate)
+
+  }else{
+    acr2.style.fill = "#909090" 
+    var adbFinRate = Math.abs(finalRate)
+    roundedFinRate =  Math.round(adbFinRate)
+  }
+  return roundedFinRate > 180 ? 180 : roundedFinRate
+}
