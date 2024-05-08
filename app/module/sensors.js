@@ -10,8 +10,8 @@ const sensors = new Array(0);
 const hrm = new HeartRateSensor({ frequency: 1 });
 
 const heartRate = document.getElementById("heartRate")
-let iconHRM = document.getElementById("iconHRM")
 const acr2 = document.getElementById("arc2");
+const acr3 = document.getElementById("arc3");
 
 
 export function init() {
@@ -22,9 +22,11 @@ function initHrm() {
   
   hrm.addEventListener("reading", () => {
     heartRate.text = hrm.heartRate ? hrm.heartRate : "--";
-    acr2.sweepAngle = hrm.heartRate ? converRatetoArch(hrm.heartRate) : "0";
+    acr2.sweepAngle = hrm.heartRate ? converRatetoArch2(hrm.heartRate) : 0;
+    acr3.sweepAngle = hrm.heartRate >= 113 ? converRatetoArch3(hrm.heartRate) : 0;
   });
   sensors.push(hrm);
+  hrm.start()
 }
 
 export function wake() {
@@ -50,23 +52,25 @@ display.addEventListener("change", () => {
   }
 });
 
-//Heart max 190 min 60 
+//Heart max 113 min 60 (used 113 for the activity start)
 //3.39 is the ratio obtained from (min arch - max arch)/(maxValue - min Value)
-function converRatetoArch(heartRate){
+function converRatetoArch2(heartRate){
   if(heartRate < 60){
     heartRate = 60
   }
-  var roundedFinRate = 0
-  let finalRate = (3.39 * (heartRate - 60)) - 180
+  return converterDeflection(113,60,heartRate)
+}
 
-  if(finalRate > 0){
-    acr2.style.fill = "fb-red"
-    roundedFinRate =  Math.round(finalRate)
+//Red arch
+function converRatetoArch3(heartRate){
+  return converterDeflection(190,113,heartRate)
+}
 
-  }else{
-    acr2.style.fill = "#909090" 
-    var adbFinRate = Math.abs(finalRate)
-    roundedFinRate =  Math.round(adbFinRate)
-  }
+
+function converterDeflection(minValue, maxValue,v){
+  let rate = 180/(maxValue-minValue)*(v-minValue) - 180
+  var adbFinRate = Math.abs(rate)
+  let roundedFinRate =  Math.round(adbFinRate)
+  console.log("finalRate: " + roundedFinRate)
   return roundedFinRate > 180 ? 180 : roundedFinRate
 }

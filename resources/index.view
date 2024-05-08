@@ -5,6 +5,7 @@
     <symbol id="arcs">
       <arc id="arcBg" fill="white" arc-width="25" start-angle="90" sweep-angle="180" class="statItem" type="arcBG" />
       <arc id="arcFg" fill="#909090"  arc-width="25" start-angle="90" sweep-angle="180" class="statItem"/>
+      <arc id="arcRd" fill="fb-red"  arc-width="25" start-angle="90" sweep-angle="0" class="statItem"/>
     </symbol>
   </defs>
 
@@ -262,6 +263,12 @@
         <set href="arcFg" attributeName="width" to="280" />
         <set href="arcFg" attributeName="height" to="280" />
         <set href="arcFg" attributeName="id" to="arc2" />
+        <!-- Arch Red -->
+        <set href="arcRd" attributeName="x" to="-10" />
+        <set href="arcRd" attributeName="y" to="-5" />
+        <set href="arcRd" attributeName="width" to="280" />
+        <set href="arcRd" attributeName="height" to="280" />
+        <set href="arcRd" attributeName="id" to="arc3" />
       </use>
   </g>
     <rect id="clickbg" pointer-events="visible"/>
