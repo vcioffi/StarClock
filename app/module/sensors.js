@@ -51,14 +51,22 @@ display.addEventListener("change", () => {
 });
 
 //Heart max 190 min 60 
-//1.38 is the ratio obtained from (min arch - max arch)/(maxValue - min Value)
+//3.39 is the ratio obtained from (min arch - max arch)/(maxValue - min Value)
 function converRatetoArch(heartRate){
-  console.log("heartRate: " + heartRate)
-  let finalRate = (1.38 * (heartRate - 60)) - 180
-  console.log("finalRate: " + finalRate)
-  var adbFinRate = Math.abs(finalRate)
-  console.log(" Abs finalRate: " + adbFinRate)
-  var roundedFinRate =  Math.round(adbFinRate)
-  console.log(" rounded finalRate: " + roundedFinRate)
-  return roundedFinRate
+  if(heartRate < 60){
+    heartRate = 60
+  }
+  var roundedFinRate = 0
+  let finalRate = (3.39 * (heartRate - 60)) - 180
+
+  if(finalRate > 0){
+    acr2.style.fill = "fb-red"
+    roundedFinRate =  Math.round(finalRate)
+
+  }else{
+    acr2.style.fill = "#909090" 
+    var adbFinRate = Math.abs(finalRate)
+    roundedFinRate =  Math.round(adbFinRate)
+  }
+  return roundedFinRate > 180 ? 180 : roundedFinRate
 }
